@@ -79,6 +79,12 @@ For other IDEs, make a project that includes all source and header files
 located at ..\Cpp-Keylogger\Keylogger
 ```
 
+## Enabling portability for systems that do not have visual studio or the vs runtimes installed
+
+If Visual Studio or its runtimes are not installed on the host computer, the program will fail to start. The missing .dll are a issue of static linking not missing packages (in most cases), becuase visual studio 2019 comes pre-installed with what you need.
+
+To fix: go to your project properties (in project tab) Select C/C++ Change the value of runtime library to "Multi-threaded debug (/MTd)"
+
 ## Setting it up
 Listed below are various options the user can interact with the source code for their specific usage.
 
@@ -101,6 +107,8 @@ Edit line 18 for powershell to login to source email (required for email to be s
 ```
 line 18: X_EM_PASS "password" // change the string to password of source email
 ```
+Since this will be using Powershell, you will need to ensure that there are no restrictions for using powershell on the host computer. 
+
 ## Configuring the Source Email
 For gmail, allow less secure apps access your source email so the program can construct and send the email.
 The steps needed to do this is documented [here](https://support.google.com/accounts/answer/6010255?hl=en) on Google Support. <br/>
